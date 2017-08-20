@@ -1,0 +1,14 @@
+  <!-- どのユーザーの画面なのか分かるように-->
+  <h2><%= @user.user_name %>のフォロー/フォロワー一覧</h2></br>
+  <h3>フォローユーザー一覧</h3>
+  <% @user.followed_users.each do |user| %>
+    <!-- 部分テンプレートfollow_follower_form呼び出し-->
+    <%= render 'follow_follower_form',user: user %>
+  <% end %>
+
+  </br>
+  <h3>フォロワーユーザー一覧</h3>
+  <% @user.followers.each do |user| %>
+    <!-- 部分テンプレートfollow_follower_form呼び出し-->
+    <%= render 'follow_follower_form',user: user %>
+  <% end %>

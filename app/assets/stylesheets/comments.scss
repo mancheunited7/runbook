@@ -1,0 +1,26 @@
+// Place all the styles related to the Comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+ul{
+// 余白なし
+  padding :0;
+}
+
+.child li{
+//上余白
+  padding-top: 13px;
+//　下線の設定
+  border-bottom: 1px dotted #ccc;
+  list-style-type: none;
+}
+
+.right{
+//　表示の右寄せ
+  text-align: right;
+}
+
+.left{
+//　表示の左寄せ
+  text-align: left;
+}

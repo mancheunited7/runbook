@@ -1,0 +1,22 @@
+<div class="wrapper col-md-6 col-md-offset-3">
+  <!-- ベースの表を作成、マウスを乗せると背景色が変更-->
+  <table class="table table-hover">
+    <!-- 表の標題行を設定-->
+    <thead>
+      <h2>メッセージ一覧</h2>
+    </thead>
+    <!-- 表の本体部分を設定-->
+    <tbody>
+      <!-- 会話のデータを順に取り出し処理-->
+      <% @conversations.each do |conversation| %>
+        <!-- 表のセルを設定-->
+        <td>
+          <% if conversation.target_user(current_user).present? %>
+            <!-- ユーザー名にメッセージ一覧へのリンク貼り付け-->
+            <%= link_to conversation.target_user(current_user).user_name, conversation_messages_path(conversation)%>
+          <% end %>
+        </td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

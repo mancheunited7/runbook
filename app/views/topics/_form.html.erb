@@ -1,0 +1,32 @@
+<img src = "<%= asset_path "start.png" %>" width="20%"><font size=6>練習記録</font><img src = "<%= asset_path "goal.jpeg" %>" width="20%">
+<!-- フォームを生成 コントローラーから渡されたtopicオブジェクトを使用して-->
+<%= form_for(@topic) do |f| %>
+<!-- オブジェクトエラー（バリデーションエラー）があるかどうかチェック-->
+<% if @topic.errors.any? %>
+<div id="error_explanation">
+  <!-- エラー件数の表示-->
+  <%= @topic.errors.count %>件エラーあり
+
+  <ul>
+    <!-- エラーメッセージの表示-->
+    <% @topic.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<h3><%= f.label :タイトル %></h3>
+<!-- テキストの高さサイズを大きくしたテキストボックスの設定　-->
+<%= f.text_field :title, class: 'form-control input-lg' %>
+</br>
+<!-- 標題の設定 -->
+<h3><%= f.label :練習内容 %></h3>
+<!-- 改行可能なテキストを設定、bootstrap用のフォームを設定-->
+<%= f.text_area :content, class: 'form-control' %>
+</br>
+<!-- ボタンの色、大きさ、横幅の設定-->
+<%= f.submit "記録する", class: 'btn btn-primary btn-lg btn-block' %>
+</br>
+<%= link_to "練習記録一覧へ", topics_path, class: "btn btn-success btn-block" %>
+<% end %>

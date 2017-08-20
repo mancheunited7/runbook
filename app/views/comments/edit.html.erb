@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h2>コメントの編集</h2>
+      <%= form_for([@topic,@comment]) do |f| %>
+      <%= f.hidden_field :topic_id %>
+      <div class="field">
+       <%= f.text_field :content , class: "form-control" %>
+      </div>
+      </br>
+      <div class="actions">
+       <%= f.submit "コメントする" , class: "btn btn-info btn-block" %>
+      </div>
+      </br>
+      <%= link_to "一覧へ戻る", topic_path(@topic.id) , class: "btn btn-success btn-block" %>
+     <% end %>
+    </div>
+  </diV>
+</div>

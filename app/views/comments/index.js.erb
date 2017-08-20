@@ -1,0 +1,4 @@
+//comments_areaに対して、htmlを取得、パーシャルテンプレートcomments/indexを呼び出し
+$("#comments_area").html("<%= j(render 'comments/index', { comments: @comment.topic.comments, topic: @comment.topic }) %>")
+//フォームの値をクリア
+$(':text').val('')

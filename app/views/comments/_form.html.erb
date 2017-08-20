@@ -1,0 +1,27 @@
+<!-- コメントフォームの生成-->
+<%= form_for([topic,comment],remote: true) do |f| %>
+  <!-- コメントのバリデーションエラー件数表示-->
+  <% if comment.errors.any? %>
+    <div id="error_explanation">
+      <%= comment.errors.count %>件のエラーあり
+
+      <ul>
+        <!-- エラー内容の表示-->
+        <% comment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :topic_id %>
+  <div class="field">
+    <!-- コメントエリア（改行可）の生成-->
+    <%= f.text_field :content,class: "form-control" %>
+  </div>
+  </br>
+  <div class="actions">
+    <!-- コメントボタンの生成-->
+    <%= f.submit "コメントする", class: "btn btn-info btn-block"%>
+  </div>
+<% end %>

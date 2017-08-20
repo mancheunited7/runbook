@@ -1,0 +1,20 @@
+// Place all the styles related to the topics controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.wrapper{
+    //外部下余白の設定
+    margin-bottom:74px;
+    //wrapper要素の周りの余白
+    padding:20px 20px 20px 35px;
+    .row{
+       //下線を引く
+        border-bottom:1px solid #ccc;
+        //余白の設定
+        padding:20px;
+        //表示位置左
+        text-align:left;
+        //テキスト折り返し
+        word-wrap:break-word;
+    }
+}

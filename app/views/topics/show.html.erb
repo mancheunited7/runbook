@@ -1,0 +1,25 @@
+<%= notice %>
+<div class="child row">
+  <div class="wrapper col-md-6 col-md-offset-3">
+    <h2>練習記録詳細</h2>
+    <div class="topic-text">
+      <p class="left"><strong>タイトル</strong></p>
+      <p class="left"><%= @topic.title %></p>
+      <p class="left"><strong>練習記録</strong></p>
+      <p class="left"><%= @topic.content %></p>
+      <!-- 時間表示の変更　yy/mm/dd AMPM 何時何分-->
+      <p class="right"><strong>作成時間:</strong><%= @topic.created_at.strftime("%y/%m/%d %p %I:%M") %></p>
+    </div>
+
+    <h3>コメント一覧</h3>
+    <div id="comments_area">
+      <!-- 部分テンプレート（comments/index）の呼び出し comenntsとtopicを引数として渡す-->
+      <%= render partial:'comments/index',locals:{comments:@comments,topic:@topic}%>
+    </div>
+      <!-- 部分テンプレート（comments/form）の呼び出し commentとtopicを引数として渡す-->
+      <%= render partial:'comments/form',locals:{comment:@comment,topic:@topic} %>
+    </br>
+    <!-- 投稿一覧画面へ遷移-->
+    <%= link_to "戻る", topics_path,class: "btn btn-success btn-block" %>
+  </div>
+</div>

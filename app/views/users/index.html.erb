@@ -1,0 +1,22 @@
+
+  <h2>ユーザー一覧</h2>
+  <!-- 全ユーザーデータを順に取り出して表示-->
+  <% @users.each do |user| %>
+  <div class="left">
+     <div class="col-md-3 col-md-offset-1 col-sm-4 col-xs-6">
+      <!-- 詳細画面へのリンク付きのプロフィール画像表示-->
+      <%= link_to profile_img(user),user_path(user) %></br>
+      <!-- 詳細画面へのリンク付きのユーザー名表示-->
+      <strong>ユーザー名:</strong><%= link_to user.user_name,user_path(user) %></br>
+      <!-- 詳細画面へのリンク付きのメールアドレス表示-->
+      <strong>email:</strong><%= link_to user.email,user_path(user) %></br>
+      <!-- ユーザー一覧に表示されているユーザーと現在ログインしているユーザーが異なる場合-->
+      <% if user.id != current_user.id %>
+        <!-- メッセージ画面へのリンク表示（送り主：現在のユーザー　受取人：表示されているユーザー）-->
+        <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%>
+        <!-- フォローボタンフォロー解除ボタン表示の部分テンプレート呼び出し　ログイン済の場合-->
+        <%= render partial: 'follow_form', locals: { user: user } if signed_in?   %>
+      <% end %>
+     </div>
+   </div>
+  <% end %>

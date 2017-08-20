@@ -1,0 +1,83 @@
+// Place all the styles related to the top controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+html{
+  //高さの最小値
+  min-height: 100%;
+  //現在の位置を基準に配置
+  position: relative;
+}
+
+
+body{
+// 余白なし
+  margin: 0;
+// 表示中央
+  text-align: center;
+}
+
+header{
+// ヘッダーの幅
+  width: 100%;
+//背景カラー
+  background-color: #3b5998;
+}
+
+.navbar{
+// 背景カラー透明
+  background-color: transparent;
+}
+
+.navbar-default{
+  //文字の色は原則白
+  .navbar-brand{
+   color: white;
+   //.navbar-brandクラスにマウスが乗った場合、文字の色を黒に
+   &:hover{
+     color: black;
+   }
+  }
+
+.navbar-brand{
+  //背景画像の設定 画像の繰り返し表示なし　右に配置
+  background: url("r.png") no-repeat right;
+  background-size: auto;
+  width: 120px;
+}
+
+.navbar-nav{
+  > li{
+    > a {
+      color: white;
+        &:hover, &:focus {
+          color: black;
+        }
+       }
+     }
+
+  //メニューを開いた時
+  > .open{
+    > a {
+          &:hover, &:focus {
+            background-color: transparent;
+            color: black;
+          }
+        }
+      }
+  }
+}
+
+.gazo{
+  //上余白の設定
+  padding-top: 18px;
+  }
+
+footer{
+  //位置を最下部に固定
+  position: absolute;
+  bottom: 0;
+  //幅とフォントの設定
+  width: 100%;
+  font-size: 18px;
+}

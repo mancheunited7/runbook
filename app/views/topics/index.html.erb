@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="wrapper col-md-6 col-md-offset-3">
+    <%= notice %>
+    <h2>練習記録一覧</h2>
+      <!-- 新規投稿画面へのリンクをボタンで設定-->
+      <%= link_to "投稿する", new_topic_path , class: 'btn btn-info btn-lg btn-block' %>
+
+      <!-- @topicsオブジェクトの値を順番に取り出して処理-->
+      <% @topics.each do |topic| %>
+        <div class="row">
+          <!-- プロフィール画像の表示-->
+          <%= profile_img(topic.user)  if profile_img(topic.user) %>
+          <!-- タイトルをクリックすると詳細画面へリンク-->
+          <!-- topic_path(show)は、/:id/をURLとしているので、topicオブジェクトを渡す-->
+          </br>
+          <!-- ユーザー名の表示-->
+          <strong>投稿ユーザー:</strong>
+          <%= topic.user.user_name %>
+          </br>
+          <!-- タイトルの表示-->
+          <strong>タイトル:</strong>
+          <%= link_to topic_path(topic) do %>
+            <%= topic.title %>
+          <% end %>
+          </br>
+          <!-- 練習内容の表示-->
+          <strong>練習内容:</strong>
+          <%= topic.content %>
+         </br>
+          <!-- 編集ボタン　ボタンの色、大きさ-->
+          <%= link_to "編集", edit_topic_path(topic.id), class: 'btn btn-success btn-sm' %>
+          <!-- 削除ボタン　link_toはデフォルトメソッドgetのため、メソッド:deleteを設定 確認メッセージ ボタンの色、大きさ-->
+          <%= link_to "削除", topic_path(topic.id), method: :delete, data:{confirm:'削除してもよろしいですか？'}, class: 'btn btn-danger btn-sm' %>
+        </div>
+      <% end %>
+  </div>
+</div>
