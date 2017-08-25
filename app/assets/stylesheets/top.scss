@@ -43,7 +43,7 @@ header{
 
 .navbar-brand{
   //背景画像の設定 画像の繰り返し表示なし　右に配置
-  background: url("r.png") no-repeat right;
+  background: image-url("r.png") no-repeat right;
   background-size: auto;
   width: 120px;
 }
