@@ -52,7 +52,7 @@ class TopicsController < ApplicationController
   end
 
   def update
-    @topic = Topic.find(params[:topic_id])
+    @topic = Topic.find(params[:id])
     #更新できた場合はメッセージを表示し一覧画面へ
     if @topic.update(topic_params)
       redirect_to topics_path,notice:"練習内容を編集しました"

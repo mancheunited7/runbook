@@ -27,6 +27,8 @@ header{
 .navbar{
 // 背景カラー透明
   background-color: transparent;
+  color: white;
+  margin-bottom: 0px;
 }
 
 .navbar-default{
@@ -59,6 +61,8 @@ header{
   //メニューを開いた時
   > .open{
     > a {
+      background-color: transparent;
+      color: white;
           &:hover, &:focus {
             background-color: transparent;
             color: black;
@@ -72,12 +76,3 @@ header{
   //上余白の設定
   padding-top: 18px;
   }
-
-footer{
-  //位置を最下部に固定
-  position: absolute;
-  bottom: 0;
-  //幅とフォントの設定
-  width: 100%;
-  font-size: 18px;
-}

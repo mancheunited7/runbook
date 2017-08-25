@@ -71,6 +71,8 @@ GEM
       railties (>= 3.2, < 5.2)
     erubis (2.7.0)
     execjs (2.7.0)
+    faker (1.7.3)
+      i18n (~> 0.5)
     faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.18)
@@ -232,6 +234,7 @@ DEPENDENCIES
   devise
   devise-bootstrap-views
   dotenv-rails
+  faker
   jbuilder (~> 2.0)
   jquery-rails
   letter_opener_web

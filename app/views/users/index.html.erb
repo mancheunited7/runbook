@@ -15,7 +15,7 @@
         <!-- メッセージ画面へのリンク表示（送り主：現在のユーザー　受取人：表示されているユーザー）-->
         <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%>
         <!-- フォローボタンフォロー解除ボタン表示の部分テンプレート呼び出し　ログイン済の場合-->
-        <%= render partial: 'follow_form', locals: { user: user } if signed_in?   %>
+        <%= render partial: 'follow_form', locals: { user: user } if signed_in?   %></br>
       <% end %>
      </div>
    </div>
