@@ -25,7 +25,7 @@ while n<=5
     title: "あいうえお",
     content: "かきくけこ",
     user_id: n,
-    topic_id: n,
+    id: n,
   )
   n=n+1
 end
