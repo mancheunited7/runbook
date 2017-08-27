@@ -9,11 +9,13 @@
 5.times do |n|
   provider = ""
   password = "password"
-  User.create!(user_name: Faker::Internet.user_name,
+  User.create!(
+               user_name: Faker::Internet.user_name,
                uid: Faker::Number.number(10),
                provider: provider,
                email: Faker::Internet.email,
                password: password,
+               id: n,
                )
 end
 
