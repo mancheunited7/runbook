@@ -6,7 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-5.times do |n|
+n=1
+while n<=5
   provider = ""
   password = "password"
   User.create!(
@@ -17,6 +18,7 @@
                password: password,
                id: n,
                )
+               n=n+1
 end
 
 n=1
